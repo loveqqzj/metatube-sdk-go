@@ -9,8 +9,8 @@ services:
         depends_on:
             - postgres
         environment:
-            - HTTP_PROXY=
-            - HTTPS_PROXY=
+            - HTTP_PROXY=http://192.168.50.2:7890
+            - HTTPS_PROXY=http://192.168.50.2:7890
         volumes:
             - run:/var/run
         command: -dsn "postgres://metatube:metatube@/metatube?host=/var/run/postgresql" -port 8080 -db-auto-migrate -db-prepared-stmt
